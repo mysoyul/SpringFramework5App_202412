@@ -33,6 +33,9 @@ public class HelloBeanJunitTest {
 		
 		hello.print();
 		
+		//4. Container 객체에 StringPrinter Bean을 요청하기
+		Printer printer = context.getBean("strPrinter",Printer.class);
+		assertEquals("Hello 스프링", printer.toString());
 		
 	}
 }

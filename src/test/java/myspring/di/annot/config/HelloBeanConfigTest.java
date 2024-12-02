@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import myspring.di.annot.HelloBean;
 
 @ExtendWith(SpringExtension.class)
-//Spring-Test의 AnnotationConfigContextLoader는 AnnotationConfigApplicationContext 컨테이너를 로드해주는 역할
+//Spring-Test의 AnnotationConfigContextLoader는 AnnotationConfigApplicationContext 컨테이너를 로드 해주는 역할
 @ContextConfiguration(classes = HelloBeanConfig.class, loader = AnnotationConfigContextLoader.class)
 public class HelloBeanConfigTest {
 	@Autowired

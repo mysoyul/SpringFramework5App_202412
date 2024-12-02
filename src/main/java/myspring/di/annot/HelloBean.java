@@ -3,17 +3,16 @@ package myspring.di.annot;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("helloBean")
 public class HelloBean {
-	@Value("어노테이션")
+	@Value("${annotName}")
 	String name;
 	
-	@Autowired
-	@Qualifier("stringPrinter")
+//	@Autowired
+//	@Qualifier("stringPrinter")
 	PrinterBean printer;
 	
 	List<String> names;
@@ -41,10 +40,12 @@ public class HelloBean {
 //		this.name = name;
 //	}
 //
-//	public void setPrinter(PrinterBean printer) {
-//		System.out.println("setPrinter() 호출됨 " + printer.getClass().getName());
-//		this.printer = printer;
-//	}
+	@Autowired
+	//@Qualifier("stringPrinter")
+	public void setPrinter(PrinterBean printer) {
+		System.out.println("setPrinter() 호출됨 " + printer.getClass().getName());
+		this.printer = printer;
+	}
 
 	public String sayHello() {
 		return "Hello " + name;

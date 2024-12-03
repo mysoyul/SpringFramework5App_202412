@@ -17,4 +17,18 @@
 		p:password="${db.password}"
 	 />
 	 
+	<!-- SqlSessionFactoryBean 클래스를 Spring Bean으로 설정하기 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- setDataSource(DataSource dataSource) -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- setConfigLocation(org.springframework.core.io.Resource configLocation) -->
+		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
+		<!-- void setMapperLocations(org.springframework.core.io.Resource... mapperLocations) -->
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mybatis/*Mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+	
 </beans>

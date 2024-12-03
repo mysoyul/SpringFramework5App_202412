@@ -20,7 +20,9 @@ public class HelloBeanCons {
 	}
 
 	@Autowired
-	public HelloBeanCons(@Value("${annotNameCons}") String name, @Qualifier("printer") PrinterBean printer) {
+	public HelloBeanCons(@Value("${annotNameCons}") String name,
+			             @Qualifier("printer") PrinterBean printer) {
+			
 		System.out.println(this.getClass().getName() + " OverLoading 생성자 호출됨");
 		this.name = name;
 		this.printer = printer;

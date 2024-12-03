@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 
 import myspring.di.xml.ConsolePrinter;
@@ -18,7 +19,7 @@ public class HelloConfig {
 	@Autowired
 	Environment env;
 	
-	@Bean
+	@Bean @Scope(value = "prototype")
 	public Printer strPrinter() {
 		return new StringPrinter();
 	}

@@ -31,4 +31,9 @@
 		</property>
 	</bean>
 	
+	<!-- SqlSessionTemplate 클래스를 Spring Bean으로 설정하기 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+	
 </beans>

@@ -41,7 +41,10 @@ public class MyBatisTest {
 	@Test
 	void userService() {
 		UserVO user = userService.getUser("dooly");
+		user.setCity("경기");
 		System.out.println(user);
+		
+		userService.updateUser(user);
 	}
 	
 	@Test //@Disabled

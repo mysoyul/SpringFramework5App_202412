@@ -107,6 +107,7 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.13</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

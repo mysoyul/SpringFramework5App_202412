@@ -15,6 +15,7 @@ public class LoggingAspect {
 	
 protected static final Logger logger = LogManager.getLogger();
 	
+	//전처리 어드바이스
     @Before("execution(public * myspring..*(..))")
 	public void before(JoinPoint joinPoint) {
 		String signatureString = joinPoint.getSignature().getName();	
@@ -25,6 +26,8 @@ protected static final Logger logger = LogManager.getLogger();
 			logger.debug("@Before [ " + signatureString + " ] 아규먼트 " + arg);			
 		}		
 	}
+    
+    //후처리 어드바이스 ( 정상종료 )
     @AfterReturning(pointcut="execution(public * myspring.user.service.*.*(..))", returning="ret")
 	public void afterReturning(JoinPoint joinPoint, Object ret) {
 		String signatureString = joinPoint.getSignature().getName();		
@@ -33,14 +36,15 @@ protected static final Logger logger = LogManager.getLogger();
 
 	}
     
-    @AfterThrowing(pointcut="execution(* *..UserService*.*(..))", 
-    		throwing="ex")
+    //후처리 어드바이스  ( 예외발생 )
+    @AfterThrowing(pointcut="execution(* *..UserService*.*(..))",  throwing="ex")
 	public void afterThrowing(JoinPoint joinPoint, Throwable ex) {
 		String signatureString = joinPoint.getSignature().getName();	
 		logger.debug("@AfterThrowing [ " + signatureString + " ] 메서드 실행 중 예외 발생");
 		logger.debug("@AfterThrowing [ " + signatureString + " ] 예외=" + ex.getMessage());
 	}
     
+    //후처리 어드바이스  ( 정상,예외 )
     @After("execution(* *..*.*User(..))")
 	public void afterFinally(JoinPoint joinPoint) {
 		String signatureString = joinPoint.getSignature().getName();

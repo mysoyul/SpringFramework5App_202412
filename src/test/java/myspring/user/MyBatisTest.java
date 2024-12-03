@@ -44,7 +44,7 @@ public class MyBatisTest {
 		System.out.println(user);
 	}
 	
-	@Test
+	@Test //@Disabled
 	void userMapper() {
 		UserVO user = userMapper.selectUserById("dooly");
 		System.out.println(user);
@@ -57,7 +57,7 @@ public class MyBatisTest {
 	}
 	
 	
-	@Test
+	@Test @Disabled
 	void con() {
 		try {
 			Connection connection = dataSource.getConnection();

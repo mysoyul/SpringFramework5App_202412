@@ -6,6 +6,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- Component Scanning -->
+	<context:component-scan base-package="myspring.**.dao,myspring.**.service" />
+
 	<!-- values.properties 파일 정보 설정 -->
 	<context:property-placeholder location="classpath:values.properties" />
 
@@ -38,7 +41,7 @@
 	
 	<!-- Mapper 인터페이스 스캐닝을 위한 설정 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-       <property name="basePackage" value="myspring.**.dao.mapper" />
+       <property name="basePackage" value="myspring.**.mapper" />
        <!-- optional unless there are multiple session factories defined -->
        <property name="sqlSessionTemplateBeanName" value="sqlSession" />
    	</bean>

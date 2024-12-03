@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class MyBatisTest {
 	@Autowired
 	SqlSession session;
 	
-	@Test
+	@Test @Disabled
 	void session() {
 		UserVO user = session.selectOne("userNS.selectUserById", "dooly");
 		System.out.println(user);

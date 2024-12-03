@@ -36,4 +36,12 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
+	<!-- Mapper 인터페이스 스캐닝을 위한 설정 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+       <property name="basePackage" value="myspring.**.dao.mapper" />
+       <!-- optional unless there are multiple session factories defined -->
+       <property name="sqlSessionTemplateBeanName" value="sqlSession" />
+   	</bean>
+	
+	
 </beans>

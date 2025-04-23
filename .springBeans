@@ -9,8 +9,10 @@
 	<configs>
 		<config>src/main/resources/spring-helloBean.xml</config>
 		<config>src/main/resources/spring-beans.xml</config>
+		<config>src/main/resources/mylab-order-di.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/resources/spring-beans-web.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

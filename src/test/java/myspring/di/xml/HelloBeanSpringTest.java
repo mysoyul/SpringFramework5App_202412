@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = "classpath:spring-helloBean.xml")
+@ContextConfiguration(locations = "classpath:mylab-user-di.xml")
 public class HelloBeanSpringTest {
 	@Autowired
 	Hello hello;

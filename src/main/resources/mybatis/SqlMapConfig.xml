@@ -15,6 +15,7 @@
 		<typeAlias alias="Dept" type="myspring.student.vo.DeptVO" />
 		<typeAlias alias="Course" type="myspring.student.vo.CourseVO" />
 		<typeAlias alias="CourseStatus" type="myspring.student.vo.CourseStatusVO" />
+		<typeAlias alias="Customer" type="mylab.customer.vo.CustomerVO" />
 	</typeAliases>
 
 </configuration>
